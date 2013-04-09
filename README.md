@@ -44,7 +44,7 @@ For more information about Yiinitializr please check it at [its github repo](htt
 Bellow the directory structure used:
 
 ```
- |-backend
+   |-backend
    |---components
    |---config
    |-----env
@@ -121,7 +121,7 @@ The following extensions are part of YIInitializr-basic template:
 
  * Yiistrap [https://github.com/yii-twbs/yiistrap](https://github.com/yii-twbs/yiistrap)
  * Yiiwheels [https://github.com/2amigos/yiiwheels](https://github.com/2amigos/yiiwheels)
- * Yiinitializr [https://github.com/2amigos/yiinitializr](https://github.com/2amigos/yiiwheels)
+ * Yiinitializr [https://github.com/2amigos/yiinitializr](https://github.com/2amigos/yiinitializr)
 
 > [![2amigOS!](http://www.gravatar.com/avatar/55363394d72945ff7ed312556ec041e0.png)](http://www.2amigos.us)    
 <i>web development has never been so fun</i>  
