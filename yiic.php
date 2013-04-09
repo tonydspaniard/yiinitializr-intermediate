@@ -19,6 +19,4 @@ Initializer::create('./console', 'console', array(
 	'./common/config/main.php',
 	'./common/config/env.php',
 	'./common/config/local.php',
-	'env',
-	'local'
 ))->run();
