@@ -17,12 +17,13 @@ return array(
 	),
 	'components' => array(
 		'db' => array(
-			'connectionString' => '{DB_CONNECTION}',
-			'username' => '{DB_USER}',
-			'password' => '{DB_PASSWORD}',
-			'enableProfiling' => YII_DEBUG,
-			'enableParamLogging' => YII_DEBUG,
-			'charset' => 'utf8',
+			// setup to suit your needs
+//			'connectionString' => '{DB_CONNECTION}',
+//			'username' => '{DB_USER}',
+//			'password' => '{DB_PASSWORD}',
+//			'enableProfiling' => YII_DEBUG,
+//			'enableParamLogging' => YII_DEBUG,
+//			'charset' => 'utf8',
 		),
 	),
 	'params' => array(

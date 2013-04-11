@@ -44,7 +44,7 @@ return array(
 					'frontend' => array('env', 'local'),
 					'console' => array('env', 'local'),
 					'backend' => array('env', 'local'),
-					'common' => array()
+					'common' => array('env', 'local'),
 				)
 			)
 		),
