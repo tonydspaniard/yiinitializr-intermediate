@@ -13,7 +13,7 @@ namespace Yiinitializr\Helpers;
 /**
  * ArrayX provides a set of useful functions
  *
- * @author Antonio Ramirez <ramirez.cobos@gmail.com>
+ * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @package Yiinitializr.helpers
  * @since 1.0
  */
@@ -54,27 +54,6 @@ class ArrayX
 		}
 
 		return $array;
-	}
-
-	/**
-	 * Removes an item from the given options and returns the value.
-	 *
-	 * If no key is found, then default value will be returned.
-	 *
-	 * @param $array
-	 * @param $key
-	 * @param null $default
-	 * @return mixed|null
-	 */
-	public static function pop(&$array, $key, $default = null)
-	{
-		if (is_array($array))
-		{
-			$value = self::get($array, $key, $default);
-			unset($array[$key]);
-			return $value;
-		} else
-			return $default;
 	}
 
 	/**
@@ -326,44 +305,34 @@ class ArrayX
 	 * @return bool|mixed|string False on failure or the array key on
 	 * @link https://github.com/brandonwamboldt/utilphp/blob/master/util.php
 	 */
-	public static function deepSearch(array $array, $search, $field = FALSE)
+	public static function deepSearch( array $array, $search, $field = FALSE )
 	{
 		// *grumbles* stupid PHP type system
-		$search = (string)$search;
+		$search = (string) $search;
 
-		foreach ($array as $key => $elem)
-		{
+		foreach ( $array as $key => $elem ) {
 
 			// *grumbles* stupid PHP type system
-			$key = (string)$key;
+			$key = (string) $key;
 
-			if ($field)
-			{
-				if (is_object($elem) && $elem->{$field} === $search)
-				{
+			if ( $field ) {
+				if ( is_object( $elem ) && $elem->{$field} === $search ) {
 					return $key;
-				} else if (is_array($elem) && $elem[$field] === $search)
-				{
+				} else if ( is_array( $elem ) && $elem[$field] === $search ) {
 					return $key;
-				} else if (is_scalar($elem) && $elem === $search)
-				{
+				} else if ( is_scalar( $elem ) && $elem === $search ) {
 					return $key;
 				}
-			} else
-			{
-				if (is_object($elem))
-				{
-					$elem = (array)$elem;
+			} else {
+				if ( is_object( $elem ) ) {
+					$elem = (array) $elem;
 
-					if (in_array($search, $elem))
-					{
+					if ( in_array( $search, $elem ) ) {
 						return $key;
 					}
-				} else if (is_array($elem) && in_array($search, $elem))
-				{
-					return array_search($search, $elem);
-				} else if (is_scalar($elem) && $elem === $search)
-				{
+				} else if ( is_array( $elem ) && in_array( $search, $elem ) ) {
+					return array_search( $search, $elem );
+				} else if ( is_scalar( $elem ) && $elem === $search ) {
 					return $key;
 				}
 			}
@@ -384,17 +353,14 @@ class ArrayX
 	 * @return array
 	 * @link https://github.com/brandonwamboldt/utilphp/blob/master/util.php
 	 */
-	public static function deepMap(array $array, $callback, $on_nonscalar = FALSE)
+	public static function deepMap( array $array, $callback, $on_nonscalar = FALSE )
 	{
-		foreach ($array as $key => $value)
-		{
-			if (is_array($value))
-			{
-				$args = array($value, $callback, $on_nonscalar);
-				$array[$key] = call_user_func_array(array(__CLASS__, __FUNCTION__), $args);
-			} else if (is_scalar($value) || $on_nonscalar)
-			{
-				$array[$key] = call_user_func($callback, $value);
+		foreach ( $array as $key => $value ) {
+			if ( is_array( $value ) ) {
+				$args = array( $value, $callback, $on_nonscalar );
+				$array[$key] = call_user_func_array( array( __CLASS__, __FUNCTION__ ), $args );
+			} else if ( is_scalar( $value ) || $on_nonscalar ) {
+				$array[$key] = call_user_func( $callback, $value );
 			}
 		}
 
