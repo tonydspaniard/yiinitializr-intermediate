@@ -69,7 +69,10 @@ class Initializer
 		if (null !== $mergeWith)
 		{
 			if (is_array($mergeWith))
-				$files = ArrayX::merge($files, $mergeWith);
+			{
+				foreach($mergeWith as $file)
+					$files[] = $file;
+			}
 			else
 				$files[] = $mergeWith;
 		}
@@ -98,13 +101,14 @@ class Initializer
 
 		foreach ($files as $file)
 		{
-			if (is_string($file) && file_exists($directory . '/' . $file . '.php'))
-			{
-				$config = require($directory . '/' . $file . '.php');
+			$config = file_exists($file) && is_file($file)
+				? require($file)
+				: (is_string($file) && file_exists($directory . '/' . $file . '.php')
+					? require($directory . '/' . $file . '.php')
+					: array());
 
-				if (is_array($config))
-					$result = ArrayX::merge($result, $config);
-			}
+			if (is_array($config))
+				$result = ArrayX::merge($result, $config);
 		}
 
 		return $result;
