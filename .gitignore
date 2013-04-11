@@ -1,0 +1,44 @@
+# cache directories
+Thumbs.db
+*.DS_Store
+*.empty
+
+#phpstorm project files
+.idea
+
+#netbeans project files
+nbproject
+
+#eclipse, zend studio, aptana or other eclipse like project files
+.buildpath
+.project
+.settings
+
+# sass cache files
+*.sass-cache
+
+# mac deployment helpers
+switch
+index
+
+# runtime and cache directories
+/console/runtime
+/backend/www/assets
+/backend/runtime
+/frontend/www/assets
+/frontend/runtime
+
+# configuration files
+/console/config/env.php
+/console/config/local.php
+/backend/config/env.php
+/backend/config/local.php
+/frontend/config/env.php
+/frontend/config/local.php
+
+# yiinitializr env.lock file
+/common/lib/Yiinitializr/config/env.lock
+
+# composer
+/common/lib/vendor
+composer.lock
