@@ -11,15 +11,15 @@
  */
 return array(
 	'components' => array(
-		'db' => array(
-			// setup to suit your needs
+//		'db' => array(
+//			// setup to suit your needs
 //			'connectionString' => '{DB_CONNECTION}',
 //			'username' => '{DB_USER}',
 //			'password' => '{DB_PASSWORD}',
-//			'enableProfiling' => YII_DEBUG,
-//			'enableParamLogging' => YII_DEBUG,
+//			'enableProfiling' => false,
+//			'enableParamLogging' => false,
 //			'charset' => 'utf8',
-		),
+//		),
 	),
 	'params' => array(
 		'yii.debug' => false,

@@ -51,7 +51,6 @@ class Config
 			self::$_settings = file_exists(self::getConfigurationDirectoryPath() . '/settings.php')
 				? require_once(self::getConfigurationDirectoryPath() . '/settings.php')
 				: array();
-
 			self::$_settings['envlock'] = file_exists(self::getEnvironmentLockFilePath());
 
 		}

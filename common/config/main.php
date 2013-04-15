@@ -46,7 +46,6 @@ return array(
 		),
 	),
 	'params' => array(
-
 		// php configuration
 		'php.defaultCharset' => 'utf-8',
 		'php.timezone'       => 'UTC',

@@ -18,19 +18,19 @@ return array(
 		),
 	),
 	'components' => array(
-		'db' => array(
-			// change it to suit your needs
+//		'db' => array(
+//			// setup to suit your needs
 //			'connectionString' => '{DB_CONNECTION}',
 //			'username' => '{DB_USER}',
 //			'password' => '{DB_PASSWORD}',
-//			'enableProfiling' => YII_DEBUG,
-//			'enableParamLogging' => YII_DEBUG,
+//			'enableProfiling' => true,
+//			'enableParamLogging' => true,
 //			'charset' => 'utf8',
-		),
+//		),
 	),
 	'params' => array(
-		'yii.handleErrors'   => YII_DEBUG,
-		'yii.debug' => YII_DEBUG,
+		'yii.handleErrors'   => true,
+		'yii.debug' => true,
 		'yii.traceLevel' => 3,
 	)
 );
